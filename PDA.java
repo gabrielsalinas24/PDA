@@ -33,7 +33,7 @@ public class PDA
                 age = scanner.nextInt();
                 System.out.println(age);
                 LOWER_BOUND= (age/ 2) + 7;
-                if (age < LOWER_BOUND || age <18) {
+                if (age < LOWER_BOUND && age > 0 || age <18 && age > 0) {
                     System.out.println(age+" is too young!!");
                 } else {
                     if (age >= 18) {
@@ -43,6 +43,9 @@ public class PDA
             } catch (InputMismatchException error) {
                 System.out.println("Please enter an integer");
             }
+            if (age <= -1 || age <= 100 && age > 99) {
+                    System.out.println("Please enter a proper age");
+                }
         }
     }
     public int getYoungerAge(int age) {
