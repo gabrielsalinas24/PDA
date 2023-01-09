@@ -11,8 +11,6 @@ public class PDA
     Scanner scanner = new Scanner(System.in);
     int age;
     int LOWER_BOUND = 0;
-    int youngerAge;
-    int olderAge;
     /**
      * Constructor for objects of class PDA
      */
@@ -33,6 +31,7 @@ public class PDA
                 age = scanner.nextInt();
                 System.out.println(age);
                 LOWER_BOUND= (age/ 2) + 7;
+                int olderAge = (age- 7) * 2;
                 if (age < LOWER_BOUND && age > 0 || age <18 && age > 0) {
                     System.out.println(age+" is too young!!");
                 } else {
@@ -44,17 +43,9 @@ public class PDA
                 System.out.println("Please enter an integer");
             }
             if (age <= -1 || age <= 100 && age > 99) {
-                    System.out.println("Please enter a proper age");
-                }
-        }
-    }
-    public int getYoungerAge(int age) {
-        youngerAge = (age/ 2 ) + 7;
-        return youngerAge;
-    }
-    public int getOlderAge(int age){
-        olderAge = (age- 7) * 2;
-        return olderAge;
+                System.out.println("Please enter a proper age");
+            }
+                    }
     }
     
     /**
@@ -65,4 +56,3 @@ public class PDA
         pda.runEventLoop();
     }
 }
-
